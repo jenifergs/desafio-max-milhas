@@ -1,6 +1,5 @@
 import RegisterCpfService from '../src/api/service/RegisterCpfService';
 import Cpf from '../src/database/models/Cpf';
-import CustomerCpf from '../src/api/interfaces/CustomerCpf';
 import { ExistsCpfException, NotFoundCpfException } from '../src/api/exceptions/Exceptions';
 
 
