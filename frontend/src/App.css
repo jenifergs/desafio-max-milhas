@@ -1,0 +1,106 @@
+body {
+  margin: 0;
+  padding: 0;
+  font-family: "Roboto", sans-serif;
+  background-color: #2588da;
+  color: #ffffff;
+}
+
+.App {
+  text-align: center;
+  width: 100%;
+  height: 100vh;
+  margin: 0;
+  padding: 0;
+  margin-top: 10em;
+  background-color: #2588da;
+}
+
+h1 {
+  margin: 0;
+}
+
+p {
+  margin-top: 0;
+  margin-bottom: 80px;
+}
+
+.input {
+  width: 100%;
+  border: 1px solid #ffffff;
+  border-radius: 0.5rem;
+  background-color: #f5f3f3;
+  max-width: 400px;
+  height: 100%;
+  padding: 0.7rem;
+  margin-bottom: 10px;
+}
+
+.input:focus {
+  outline: none;
+}
+
+.input::placeholder {
+  color: #cacaca;
+}
+
+.error {
+  width: 50%;
+  max-width: 400px;
+  height: 100%;
+  padding: 0.7rem;
+  margin-top: 100px;
+}
+
+button {
+  border: 1px;
+  border-radius: 0.5rem;
+  padding: 0.7rem;
+  margin-left: 0.5rem;
+}
+
+.container-btn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  margin-top: 10px;
+}
+
+.btn-create {
+  background-color: #9aecb3;
+  color: #000000;
+}
+
+.btn-remove {
+  background-color: #f5a9a9;
+  color: #000000;
+}
+
+.btn-search {
+  background-color: #a9d0f5;
+  color: #000000;
+}
+
+ul {
+  list-style: none;
+  width: 50%;
+  max-width: 800px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border-radius: 0.5rem;
+  padding: 10px;
+}
+li {
+  background-color: #cee7ff;
+  width: 60%;
+  list-style: none;
+  margin: 0;
+  padding: 5px;
+  color: #ffffff;
+  margin-bottom: 20px;
+  border-radius: 3px;
+}
+
