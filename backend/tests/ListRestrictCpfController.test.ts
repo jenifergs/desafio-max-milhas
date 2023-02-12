@@ -1,20 +1,20 @@
-  import RegisterCpfService from "../src/api/service/RegisterCpfService";
+  import ListRestrictCpfService from "../src/api/service/ListRestrictCpfService";
 import { ExistsCpfException, NotFoundCpfException } from "../src/api/exceptions/Exceptions";
-import CustomerCpfController from "../src/api/controller/CustomerCpfController";
+import ListRestrictCpfController from "../src/api/controller/ListRestrictCpfController";
 import { Request, Response} from 'express'
 import CustomerCpf from '../src/api/interfaces/CustomerCpf';
 
 describe('Camada controller', () => {
   let cpfCustomer = {cpf: '85839831514', createdAt: new Date()}
-  let service: RegisterCpfService;
-  let controller: CustomerCpfController;
+  let service: ListRestrictCpfService;
+  let controller: ListRestrictCpfController;
   let res: Response;
   let req: Request<CustomerCpf>;
   let reqParams: Request<CustomerCpf>;
 
   beforeEach(() => {
-    service = new RegisterCpfService();
-    controller = new CustomerCpfController(service);
+    service = new ListRestrictCpfService();
+    controller = new ListRestrictCpfController(service);
     res = {
       status: jest.fn().mockReturnThis(),
       json: jest.fn().mockReturnThis()
@@ -34,16 +34,16 @@ describe('Camada controller', () => {
 
 
   it('Verifica se cadastra cpf na lista', async () => {
-    service.registerNew = jest.fn().mockResolvedValue(cpfCustomer);
-    const cpf = await controller.newRegisterCpf(req, res)
+    service.addCpfInList = jest.fn().mockResolvedValue(cpfCustomer);
+    const cpf = await controller.addCpfInList(req, res)
     expect(res.status).toBeCalledWith(201)
     expect(res.json).toBeCalledWith(cpfCustomer)
   })
 
   it('Verifica se não cadastra na lista, caso cpf já exista', async () => {
     const exception = new ExistsCpfException();
-    service.registerNew = jest.fn().mockRejectedValue(exception);
-      await controller.newRegisterCpf(req, res);
+    service.addCpfInList = jest.fn().mockRejectedValue(exception);
+      await controller.addCpfInList(req, res);
       expect(res.status).toBeCalledWith(exception.statusCode);
       expect(res.json).toBeCalledWith(exception.payload);
   }
@@ -109,8 +109,8 @@ describe('Camada controller', () => {
   )
 
   it('Verifica se um controller instanciado sem passar um service no construtor e um objeto do tipo CustomerCpfController', () => {
-    const controller = new CustomerCpfController();
-    expect(controller).toBeInstanceOf(CustomerCpfController);
+    const controller = new ListRestrictCpfController();
+    expect(controller).toBeInstanceOf(ListRestrictCpfController);
   })
 
 })

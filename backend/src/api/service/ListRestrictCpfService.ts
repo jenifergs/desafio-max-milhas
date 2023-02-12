@@ -1,8 +1,8 @@
 import Cpf from '../../database/models/Cpf';
 import { ExistsCpfException, NotFoundCpfException } from '../exceptions/Exceptions';
 
-export default class RegisterCpfService {
-  registerNew = async (cpf: string) => {
+export default class ListRestrictCpfService {
+  addCpfInList = async (cpf: string) => {
     const customerCpfExists = await Cpf.findOne({ where: { cpf } })
     if (customerCpfExists) {
     throw new ExistsCpfException()

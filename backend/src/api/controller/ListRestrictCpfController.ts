@@ -1,20 +1,20 @@
 import { Request, Response } from 'express'
 import { CpfExceptions } from '../exceptions/Exceptions'
 import type CustomerCpf from '../interfaces/CustomerCpf'
-import RegisterCpfService from '../service/RegisterCpfService'
+import ListRestrictCpfService from '../service/ListRestrictCpfService'
 
 
-export default class CustomerCpfController {
-  service: RegisterCpfService
-  constructor( service?: RegisterCpfService) {
-    this.service = service || new RegisterCpfService()
+export default class ListRestrictCpfController {
+  service: ListRestrictCpfService
+  constructor( service?: ListRestrictCpfService) {
+    this.service = service || new ListRestrictCpfService()
   }
 
-    newRegisterCpf = async (request: Request<CustomerCpf>, response: Response) => {
+    addCpfInList = async (request: Request<CustomerCpf>, response: Response) => {
     const { cpf } = request.body
 
     try {
-      const customerCpf = await this.service.registerNew(cpf)
+      const customerCpf = await this.service.addCpfInList(cpf)
       return response.status(201).json(customerCpf)
       
     } catch (error) {

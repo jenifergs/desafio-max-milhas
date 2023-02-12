@@ -1,4 +1,4 @@
-function ButtonCreate({ cpf }) {
+function ButtonAddInList({ cpf }) {
 
   const handleClick = async () => {
     const options = {
@@ -26,4 +26,4 @@ function ButtonCreate({ cpf }) {
 }
 
 
-export default ButtonCreate;
+export default ButtonAddInList;

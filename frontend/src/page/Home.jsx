@@ -1,4 +1,4 @@
-import ButtonCreate from '../components/ButtonCreate';
+import ButtonAddInList from '../components/ButtonAddInList';
 import ButtonDelete from '../components/ButtonDelete';
 import ButtonSearch from '../components/ButtonSearch';
 import Input from '../components/Input';
@@ -23,13 +23,11 @@ function Home () {
         onChange={ handleChange} />
         <br />
         <div className='container-btn'>
-        <ButtonCreate cpf={cpf} />
+        <ButtonAddInList cpf={cpf} />
         <ButtonDelete cpf={cpf} />
         <ButtonSearch
          cpf={cpf}
          setArrayCustomers={setArrayCustomers}
-
-
          />
         </div>
       </div>

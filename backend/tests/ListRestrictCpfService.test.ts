@@ -1,25 +1,25 @@
-import RegisterCpfService from '../src/api/service/RegisterCpfService';
+import ListRestrictCpfService from '../src/api/service/ListRestrictCpfService';
 import Cpf from '../src/database/models/Cpf';
 import { ExistsCpfException, NotFoundCpfException } from '../src/api/exceptions/Exceptions';
 
 
 describe('Camada service', () => {
   let cpfCustomer = {cpf: '85839831514', createdAt: new Date()}
-  let service: RegisterCpfService;
+  let service: ListRestrictCpfService;
   beforeEach(() => {
-    service = new RegisterCpfService();
+    service = new ListRestrictCpfService();
   })
   it('Verifica se cadastra cpf na lista', async () => {
   Cpf.findOne = jest.fn().mockResolvedValue(null);
   Cpf.create = jest.fn().mockResolvedValue(cpfCustomer)
-  const cpf = await service.registerNew('85839831514')
+  const cpf = await service.addCpfInList('85839831514')
   expect(cpf).toEqual(cpfCustomer)
   })
 
   it('Verifica se não cadastra na lista, caso cpf já exista', async () => {
     Cpf.findOne = jest.fn().mockResolvedValue(cpfCustomer);
     try {
-      await service.registerNew('85839831514')
+      await service.addCpfInList('85839831514')
     } catch (e) {
       expect(e).toEqual( new ExistsCpfException())
     }
