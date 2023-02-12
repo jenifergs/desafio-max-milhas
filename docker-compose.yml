@@ -34,7 +34,7 @@ services: # Define os containers que vamos colocar de pe
   frontend:
         build: ./frontend
         ports:
-          - 3001:3000
+          - 3000:3000
         working_dir: /frontend
         depends_on:
           - backend
