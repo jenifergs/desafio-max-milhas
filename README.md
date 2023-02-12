@@ -1,4 +1,4 @@
-# Seja bem vindo ao desafio Técnico MaxMilhas ✈️
+# Seja bem-vindo ao desafio Técnico MaxMilhas ✈️
 
 ## Sobre o projeto
 O objetivo deste projeto era desenvolver uma API que expusesse Rotas através das quais fosse possível realizar as operações CRIAÇÃO, REMOÇÃO e LEITURA de CPF's em uma lista restrita.
