@@ -82,7 +82,7 @@ http://localhost:3333/cpf/numero_do_cpf
 
 > Caso  você use Insomnia para executar as requisições poderá importar com o botão abaixo
 
-
+[![Run in Insomnia}](https://insomnia.rest/images/run.svg)](https://insomnia.rest/run/?label=desafio-maxmilhas&uri=https%3A%2F%2Fraw.githubusercontent.com%2Fjenifergs%2Fdesafio-max-milhas%2Fmaster%2Fassets%2Finsomnia-maxmilhas)
 
 ### Passo 3:
 Para executar os testes unitários, você precisará acessar o container, para isso, execute um:
