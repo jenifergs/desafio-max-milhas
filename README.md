@@ -93,14 +93,18 @@ Agora, dentro do container execute um:
 ```
 npm run test
 ```
-Algo como:
-![tests](assets/tests.png)
+Algo como:    
+  <img align="center" alt="HTML" height="300" width="400" src="./assets/tests.png">
+
+<!-- ![tests](assets/tests.png) -->
 Também é possivel ver a covertura de codigo, execute um:
 ```
 npm run cov
 ```
-Algo parecido com:
-![coverage](assets/cov.png)
+Algo parecido com:    
+  <img align="center" alt="HTML" height="300" width="400" src="./assets/cov.png">
+
+<!-- ![coverage](assets/cov.png) -->
 
 ## Acessando o frontend
 Nos passos anteriores foi instruido que se colocasse pare rodar os containers atraves do docker, sendo assim a aplicação React deverá estar disponivel na porta 3000, sendo assim acesse
@@ -108,13 +112,13 @@ Nos passos anteriores foi instruido que se colocasse pare rodar os containers at
 
 Obs: Para listar todos os cpfs adicionados na lista de restrição, basta clicar no botão buscar sem adicionar valor ao input.
 
-Você deverá encontrar uma interface como:
-![site](assets/site.png)
+Você deverá encontrar uma interface como:   
 
+  <img align="center" alt="HTML" height="300" width="400" src="./assets/site.png">
 
+<!-- ![site](assets/site.png) -->
 
-
- Feito com 💙 Por Jenifer Gonçalves Com:
+Feito com 💚 Por Jenifer Gonçalves Com:
  <div style="display: inline_block" align="left"><br>
   <img align="center" alt="HTML" height="30" width="40" src="https://raw.githubusercontent.com/devicons/devicon/master/icons/html5/html5-original.svg">
   <img align="center" alt="CSS" height="30" width="40" src="https://raw.githubusercontent.com/devicons/devicon/master/icons/css3/css3-original.svg">
