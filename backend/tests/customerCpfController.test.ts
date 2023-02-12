@@ -1,10 +1,8 @@
-import RegisterCpfService from "../src/api/service/RegisterCpfService";
+  import RegisterCpfService from "../src/api/service/RegisterCpfService";
 import { ExistsCpfException, NotFoundCpfException } from "../src/api/exceptions/Exceptions";
 import CustomerCpfController from "../src/api/controller/CustomerCpfController";
 import { Request, Response} from 'express'
 import CustomerCpf from '../src/api/interfaces/CustomerCpf';
-
-
 
 describe('Camada controller', () => {
   let cpfCustomer = {cpf: '85839831514', createdAt: new Date()}
@@ -92,6 +90,15 @@ describe('Camada controller', () => {
   }
   )
 
+
+  it('Verifica se quando acontece um erro em getAllCpfs a api retorna status 500', async () => {
+    service.getAllCpfs = jest.fn().mockRejectedValue(new Error('Erro inesperado'));
+    await controller.getAllCpfs(req, res)
+    expect(res.status).toBeCalledWith(500)
+    expect(res.json).toBeCalledWith({ message: 'Internal server error' })
+  }
+  )
+
   it('verifica metodo handleError quando um erro que não é uma instancia de CpfException é lançado', async () => {
     const error = new Error('Erro inesperado');
     service.getCpf = jest.fn().mockRejectedValue(error);
@@ -100,5 +107,10 @@ describe('Camada controller', () => {
     expect(res.json).toBeCalledWith({message: 'Internal server error'});
   }
   )
+
+  it('Verifica se um controller instanciado sem passar um service no construtor e um objeto do tipo CustomerCpfController', () => {
+    const controller = new CustomerCpfController();
+    expect(controller).toBeInstanceOf(CustomerCpfController);
+  })
 
 })

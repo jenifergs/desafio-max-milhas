@@ -7,7 +7,7 @@ module.exports = {
   coveragePathIgnorePatterns: ['coverage', 'node_modules'],
   moduleDirectories: ['node_modules'],
   moduleFileExtensions: ['js', 'json', 'ts', 'node'],
-  testPathIgnorePatterns: ['/node_modules/'],
+  testPathIgnorePatterns: ['/node_modules/', '/dist/'],
   transform: {
     '.+\\.ts$': [
       'esbuild-jest',
