@@ -3,7 +3,7 @@ services: # Define os containers que vamos colocar de pe
   database: # Define que vamos ter um container dedicado ao banco de dados (poderia ser chamado de db)
     # Restarta a imagem caso algo a faça parar
     restart: always
-    container_name: database # Chamamos o container de database
+    container_name: database # nomeia o container de database
     image: mysql:8.0 # Define que será usado a versão padrão do mysql8 como base
     environment:
       - MYSQL_ROOT_HOST=% # Define que o root pode se conectar de qualquer lugar
