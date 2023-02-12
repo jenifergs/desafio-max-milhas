@@ -49,7 +49,7 @@ export default class CustomerCpfController {
     try {
       const customerCpf = await this.service.getAllCpfs()
       return response.status(200).json(customerCpf)
-      
+
     } catch (error) {
       this.handleError(error, response)
     }
