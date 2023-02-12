@@ -1,0 +1,41 @@
+version: "3.5" # Utiliza uma versão recente do docker compose
+services: # Define os containers que vamos colocar de pe 
+  database: # Define que vamos ter um container dedicado ao banco de dados (poderia ser chamado de db)
+    # Restarta a imagem caso algo a faça parar
+    restart: always
+    container_name: database # Chamamos o container de database
+    image: mysql:8.0 # Define que será usado a versão padrão do mysql8 como base
+    environment:
+      - MYSQL_ROOT_HOST=% # Define que o root pode se conectar de qualquer lugar
+      - DB_USER=root # Define o usuario padrao
+      - MYSQL_ROOT_PASSWORD=root # Define a senha root
+      - MYSQL_DB=maxmilhas # define o nome do banco
+    ports:
+      - '3306:3306' # define qual será a porta externa e a porta interna
+  backend:
+    # Define que o container backend será um container interativo (para podermos rodar comandos dentro dele)
+    tty: true 
+    stdin_open: true
+    # Restarta a imagem caso algo a faça parar
+    restart: always
+    container_name: backend # Define o nome do container como backend
+    build: ./backend # Indica que será buildado o Dockerfile para gerar esse container
+    ports:
+      - 3333:3333 # Define a porta interna e externa
+    working_dir: /backend # Define qual será a pasta de trabalho
+    environment:
+      - DB_USER = root
+      - MYSQL_ROOT_PASSWORD = root
+      - MYSQL_DB = maxmilhas
+      - DB_HOST = database
+      - DB_PORT = 3306
+    depends_on:
+      - database # Define que o container backend depende do container database 
+  frontend:
+        build: ./frontend
+        ports:
+          - 3001:3000
+        working_dir: /frontend
+        depends_on:
+          - backend
+    
