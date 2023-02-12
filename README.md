@@ -118,7 +118,7 @@ Você deverá encontrar uma interface como:
 
 <!-- ![site](assets/site.png) -->
 
-Feito com 💚 Por Jenifer Gonçalves Com:
+Feito com 💙 Por Jenifer Gonçalves Com:
  <div style="display: inline_block" align="left"><br>
   <img align="center" alt="HTML" height="30" width="40" src="https://raw.githubusercontent.com/devicons/devicon/master/icons/html5/html5-original.svg">
   <img align="center" alt="CSS" height="30" width="40" src="https://raw.githubusercontent.com/devicons/devicon/master/icons/css3/css3-original.svg">
