@@ -1,12 +1,11 @@
+function Input({value, onChange}) {
 
-
-function Input({ name, value, onChange }) {
   return (
     <input
+      className="input"
       type="text"
-      name={name}
       value={value}
-      onChange={onChange}
+      onChange={(event) => onChange(event)}
       placeholder="Digite o cpf"
     />
   );
